@@ -1,68 +1,77 @@
+from ultralytics import YOLO
+import cv2
+import argparse
 import os
 import json
-from typing import Dict, Any, List, Optional
+import numpy as np
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, Any
 
-import cv2
-from ultralytics import YOLO
+# ============================================
+# MODELE
+# ============================================
 
+model = YOLO("yolov8n-pose.pt")
 
-# ============================================================
-# CONFIGURATION
-# ============================================================
+# ============================================
+# PARAMETRES
+# ============================================
 
-VIDEO_DIR = "videos"
-OUTPUT_DIR = "outputs"
-RAW_FRAMES_DIR = os.path.join(OUTPUT_DIR, "frames")
-ANNOTATED_FRAMES_DIR = os.path.join(OUTPUT_DIR, "annotated_frames")
-YOLO_JSON_PATH = os.path.join(OUTPUT_DIR, "yolo_pose_results.json")
-
-# Analyse 1 frame toutes les N frames.
-# Augmente si la vidéo est longue, diminue si tu veux plus de précision.
-FRAME_STEP = 10
-
-MODEL_PATH = "yolov8n-pose.pt"
+ANALYSIS_STRIDE = 5
+EVENT_WINDOW_SECONDS = 2
+MAX_FRAMES_PER_EVENT = 3
+OUTPUT_ROOT = "outputs/runs"
 
 
-# ============================================================
-# CHARGEMENT MODELE
-# ============================================================
+# ============================================
+# JSON SAFE
+# ============================================
 
-try:
-    _model = YOLO(MODEL_PATH)
-except Exception as e:
-    _model = None
-    print(f"[yolo_pose] Erreur chargement YOLO Pose: {e}")
-
-
-PERSON_KEYWORDS = [
-    "personne", "quelqu'un", "quelqu un",
-    "homme", "femme", "gens",
-    "people", "person", "individual", "human",
-    "blessé", "blesse", "victime",
-    "allongé", "allonge", "debout", "posture",
-]
-
-
-# ============================================================
-# OUTILS POSTURE
-# ============================================================
-
-def visible(kpt, threshold: float = 0.35) -> bool:
-    """Retourne True si un keypoint YOLO Pose est suffisamment visible."""
-    return float(kpt[2]) > threshold
+def make_json_safe(obj):
+    if isinstance(obj, dict):
+        return {k: make_json_safe(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [make_json_safe(v) for v in obj]
+    if isinstance(obj, tuple):
+        return [make_json_safe(v) for v in obj]
+    if isinstance(obj, np.bool_):
+        return bool(obj)
+    if isinstance(obj, np.integer):
+        return int(obj)
+    if isinstance(obj, np.floating):
+        return float(obj)
+    return obj
 
 
-def is_valid_person(box, kpts, frame_shape) -> bool:
-    """
-    Filtre les faux positifs :
-    - bbox trop petite
-    - ratio largeur/hauteur absurde
-    - pas assez de keypoints visibles
-    """
+# ============================================
+# OUTILS
+# ============================================
+
+def visible(kpt, threshold=0.35):
+    return kpt[2] > threshold
+
+
+def image_position(box, frame_shape):
     x1, y1, x2, y2 = box
+    frame_h, frame_w = frame_shape[:2]
 
+    cx = (x1 + x2) / 2
+    cy = (y1 + y2) / 2
+
+    horizontal = "gauche" if cx < frame_w / 3 else "droite" if cx > 2 * frame_w / 3 else "centre"
+    vertical = "haut" if cy < frame_h / 3 else "bas" if cy > 2 * frame_h / 3 else "milieu"
+
+    return f"{vertical}-{horizontal}"
+
+
+def is_valid_person(box, kpts, frame_shape):
+    x1, y1, x2, y2 = box
     w = x2 - x1
     h = y2 - y1
+
+    if h <= 0 or w <= 0:
+        return False
 
     frame_h, frame_w = frame_shape[:2]
     area = w * h
@@ -71,15 +80,12 @@ def is_valid_person(box, kpts, frame_shape) -> bool:
     if area < 0.0008 * frame_area:
         return False
 
-    if h <= 0 or w <= 0:
-        return False
-
     ratio = w / h
 
     if ratio < 0.15 or ratio > 3.5:
         return False
 
-    visible_points = sum(1 for k in kpts if float(k[2]) > 0.35)
+    visible_points = sum(1 for k in kpts if k[2] > 0.35)
 
     if visible_points < 5:
         return False
@@ -87,48 +93,53 @@ def is_valid_person(box, kpts, frame_shape) -> bool:
     return True
 
 
-def classify_posture(box, kpts) -> str:
-    """
-    Classe une personne détectée en :
-    - ALLONGE
-    - DEBOUT
-    - INCERTAIN
-    """
+def classify_posture(box, kpts):
     x1, y1, x2, y2 = box
-
     w = x2 - x1
     h = y2 - y1
 
     if h <= 0:
-        return "INCERTAIN"
+        return "INCERTAIN", 0.95
 
     ratio = w / h
+    visible_points = sum(1 for k in kpts if visible(k))
 
-    L_HIP, R_HIP = 11, 12
-    L_KNEE, R_KNEE = 13, 14
-    L_SHOULDER, R_SHOULDER = 5, 6
+    if ratio > 1.15:
+        uncertainty = max(0.05, 0.35 - (ratio - 1.15))
+        return "ALLONGE", round(uncertainty, 2)
 
-    hips_visible = visible(kpts[L_HIP]) or visible(kpts[R_HIP])
-    knees_visible = visible(kpts[L_KNEE]) or visible(kpts[R_KNEE])
-    shoulders_visible = visible(kpts[L_SHOULDER]) or visible(kpts[R_SHOULDER])
+    if ratio < 1.05:
+        confidence_bonus = min(visible_points / 17, 1.0)
+        uncertainty = 0.45 - (confidence_bonus * 0.35)
+        uncertainty = max(0.05, uncertainty)
+        return "DEBOUT", round(uncertainty, 2)
 
-    if ratio > 1.20:
-        return "ALLONGE"
+    uncertainty = 0.60
+    if visible_points < 6:
+        uncertainty = 0.80
 
-    if ratio < 0.75:
-        return "DEBOUT"
-
-    if ratio < 0.95 and shoulders_visible and (hips_visible or knees_visible):
-        return "DEBOUT"
-
-    return "INCERTAIN"
+    return "INCERTAIN", uncertainty
 
 
-def draw_posture_label(img, label: str, x1: int, y1: int) -> None:
-    """Dessine le label de posture sur l'image annotée."""
-    text = f"ETAT : {label}"
+def risk_level(posture, uncertainty):
+    if posture == "ALLONGE" and uncertainty <= 0.40:
+        return "ELEVE"
+    if posture == "ALLONGE":
+        return "MOYEN"
+    if posture == "INCERTAIN":
+        return "A_VERIFIER"
+    return "FAIBLE"
+
+
+def needs_vlm(posture, uncertainty):
+    return posture in ["ALLONGE", "INCERTAIN"] or uncertainty > 0.40
+
+
+def draw_big_label(img, label, uncertainty, x1, y1):
+    text = f"{label} | incert. {uncertainty:.2f}"
+
     font = cv2.FONT_HERSHEY_SIMPLEX
-    scale = 0.9
+    scale = 0.8
     thickness = 2
 
     (tw, th), _ = cv2.getTextSize(text, font, scale, thickness)
@@ -141,7 +152,7 @@ def draw_posture_label(img, label: str, x1: int, y1: int) -> None:
         (x, y - th - 12),
         (x + tw + 20, y + 8),
         (255, 0, 0),
-        -1,
+        -1
     )
 
     cv2.putText(
@@ -152,80 +163,199 @@ def draw_posture_label(img, label: str, x1: int, y1: int) -> None:
         scale,
         (255, 255, 255),
         thickness,
-        cv2.LINE_AA,
+        cv2.LINE_AA
     )
 
 
-# ============================================================
-# VIDEO INPUT
-# ============================================================
+# ============================================
+# FRAME PROCESSING
+# ============================================
 
-def find_first_video(video_dir: str = VIDEO_DIR) -> Optional[str]:
-    """Cherche automatiquement une vidéo dans le dossier videos/."""
-    extensions = (".mp4", ".mov", ".avi", ".mkv")
+def process_frame(frame, frame_index=0, timestamp_sec=0.0):
+    results = model(
+        frame,
+        conf=0.35,
+        iou=0.50,
+        imgsz=960,
+        verbose=False
+    )
 
-    if not os.path.isdir(video_dir):
-        return None
+    annotated = results[0].plot(labels=False)
+    detections = []
 
-    for filename in sorted(os.listdir(video_dir)):
-        if filename.lower().endswith(extensions):
-            return os.path.join(video_dir, filename)
+    boxes = results[0].boxes.xyxy.cpu().numpy()
 
-    return None
+    if results[0].keypoints is None:
+        return annotated, detections
+
+    keypoints = results[0].keypoints.data.cpu().numpy()
+    yolo_confs = results[0].boxes.conf.cpu().numpy()
+
+    for idx, (box, kpts, yolo_conf) in enumerate(zip(boxes, keypoints, yolo_confs)):
+        if not is_valid_person(box, kpts, frame.shape):
+            continue
+
+        x1, y1, x2, y2 = map(int, box)
+
+        posture, uncertainty = classify_posture(box, kpts)
+
+        detection = {
+            "id": int(idx),
+            "frame_index": int(frame_index),
+            "timestamp_sec": float(timestamp_sec),
+            "class": "person",
+            "posture": posture,
+            "uncertainty_score": float(uncertainty),
+            "risk_level": risk_level(posture, uncertainty),
+            "position_in_image": image_position(box, frame.shape),
+            "yolo_confidence": float(yolo_conf),
+            "bbox_xyxy": [int(x1), int(y1), int(x2), int(y2)],
+            "bbox_center": [
+                float((x1 + x2) / 2),
+                float((y1 + y2) / 2)
+            ],
+            "bbox_size": {
+                "width": float(x2 - x1),
+                "height": float(y2 - y1)
+            },
+            "visible_keypoints_count": int(sum(1 for k in kpts if k[2] > 0.35)),
+            "needs_vlm": bool(needs_vlm(posture, uncertainty))
+        }
+
+        detections.append(detection)
+
+        draw_big_label(
+            annotated,
+            posture,
+            uncertainty,
+            x1,
+            y1
+        )
+
+    return annotated, detections
 
 
-# ============================================================
-# YOLO : ENTREE VIDEO_PATH -> SORTIE JSON
-# ============================================================
+# ============================================
+# RUN FOLDERS
+# ============================================
 
-def analyze_video_with_yolo(video_path: str) -> Dict[str, Any]:
-    """
-    Entrée :
-        video_path : chemin vers une vidéo
+def create_run_dirs(video_path):
+    video_stem = Path(video_path).stem
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    run_name = f"{timestamp}_{video_stem}"
 
-    Sortie :
-        JSON Python contenant :
-        - video_path
-        - frames analysées
-        - path vers frame brute
-        - path vers frame annotée
-        - score de confiance
-        - bbox
-        - posture
-        - résumé global
-    """
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    os.makedirs(RAW_FRAMES_DIR, exist_ok=True)
-    os.makedirs(ANNOTATED_FRAMES_DIR, exist_ok=True)
+    run_dir = Path(OUTPUT_ROOT) / run_name
+    raw_dir = run_dir / "raw"
+    annotated_dir = run_dir / "annotated"
 
-    yolo_json: Dict[str, Any] = {
-        "video_path": video_path,
-        "frame_step": FRAME_STEP,
-        "frames_analyzed": 0,
-        "frames": [],
-        "detections": [],
-        "summary": {
-            "persons_detected": 0,
-            "standing_count": 0,
-            "lying_count": 0,
-            "uncertain_count": 0,
-            "low_confidence_count": 0,
-        },
-        "error": None,
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    annotated_dir.mkdir(parents=True, exist_ok=True)
+
+    return {
+        "run_name": run_name,
+        "run_dir": str(run_dir),
+        "raw_images_dir": str(raw_dir),
+        "annotated_images_dir": str(annotated_dir),
+        "json_path": str(run_dir / "analysis.json")
     }
 
-    if _model is None:
-        yolo_json["error"] = "YOLO Pose model not loaded"
-        return yolo_json
 
-    cap = cv2.VideoCapture(video_path)
+# ============================================
+# VIDEO
+# ============================================
+
+def run_video(path):
+    cap = cv2.VideoCapture(path)
 
     if not cap.isOpened():
-        yolo_json["error"] = f"Video introuvable ou illisible: {video_path}"
-        return yolo_json
+        print("Video introuvable")
+        return {
+            "video_path": path,
+            "error": "Video introuvable",
+            "frames": [],
+            "detections": [],
+            "summary": {}
+        }
 
-    frame_id = 0
-    saved_id = 0
+    fps = cap.get(cv2.CAP_PROP_FPS)
+
+    if fps <= 0:
+        fps = 25
+
+    run_info = create_run_dirs(path)
+
+    frame_count = 0
+    event_id = 0
+    event_window_frames = int(fps * EVENT_WINDOW_SECONDS)
+
+    current_event = []
+    last_detection_frame = None
+
+    saved_frames = []
+    all_detections = []
+
+    def save_event(event_frames, event_id):
+        nonlocal saved_frames, all_detections
+
+        if not event_frames:
+            return
+
+        def priority(item):
+            detections = item["detections"]
+            score = 0
+
+            for d in detections:
+                if d["posture"] == "ALLONGE":
+                    score += 100
+                if d["posture"] == "INCERTAIN":
+                    score += 50
+                if d["needs_vlm"]:
+                    score += 30
+
+                score += d["yolo_confidence"] * 10
+                score += (1 - d["uncertainty_score"]) * 10
+
+            return score
+
+        ranked = sorted(event_frames, key=priority, reverse=True)
+        selected = ranked[:MAX_FRAMES_PER_EVENT]
+
+        for i, item in enumerate(selected):
+            annotated = item["annotated"]
+            raw_frame = item["raw_frame"]
+            detections = item["detections"]
+            frame_index = item["frame_index"]
+            timestamp_sec = item["timestamp_sec"]
+
+            base_name = f"event_{event_id:03d}_frame_{frame_index:06d}_{i}.jpg"
+
+            raw_path = str(Path(run_info["raw_images_dir"]) / base_name)
+            annotated_path = str(Path(run_info["annotated_images_dir"]) / base_name)
+
+            cv2.imwrite(raw_path, raw_frame)
+            cv2.imwrite(annotated_path, annotated)
+
+            frame_record = {
+                "event_id": int(event_id),
+                "frame_index": int(frame_index),
+                "timestamp_sec": float(timestamp_sec),
+                "raw_image_path": raw_path,
+                "annotated_image_path": annotated_path,
+                "detections": detections,
+                "summary": {
+                    "persons_detected": int(len(detections)),
+                    "allonge_count": int(sum(1 for d in detections if d["posture"] == "ALLONGE")),
+                    "debout_count": int(sum(1 for d in detections if d["posture"] == "DEBOUT")),
+                    "incertain_count": int(sum(1 for d in detections if d["posture"] == "INCERTAIN")),
+                    "needs_vlm": bool(any(bool(d["needs_vlm"]) for d in detections))
+                }
+            }
+
+            saved_frames.append(frame_record)
+            all_detections.extend(detections)
+
+            print(f"[EVENT {event_id}] raw saved: {raw_path}")
+            print(f"[EVENT {event_id}] annotated saved: {annotated_path}")
 
     while True:
         ret, frame = cap.read()
@@ -233,163 +363,145 @@ def analyze_video_with_yolo(video_path: str) -> Dict[str, Any]:
         if not ret:
             break
 
-        if frame_id % FRAME_STEP != 0:
-            frame_id += 1
+        frame_count += 1
+
+        if frame_count % ANALYSIS_STRIDE != 0:
             continue
 
-        raw_frame_path = os.path.join(RAW_FRAMES_DIR, f"frame_{saved_id:04d}.jpg")
-        annotated_frame_path = os.path.join(
-            ANNOTATED_FRAMES_DIR,
-            f"frame_{saved_id:04d}.jpg",
+        timestamp_sec = round(frame_count / fps, 2)
+
+        annotated, detections = process_frame(
+            frame,
+            frame_index=frame_count,
+            timestamp_sec=timestamp_sec
         )
 
-        frame_json: Dict[str, Any] = {
-            "frame_id": frame_id,
-            "frame_index": saved_id,
-            "image_path": raw_frame_path,
-            "annotated_image_path": annotated_frame_path,
-            "detections": [],
-        }
+        has_detection = len(detections) > 0
 
-        try:
-            cv2.imwrite(raw_frame_path, frame)
+        if has_detection:
+            current_event.append({
+                "frame_index": frame_count,
+                "timestamp_sec": timestamp_sec,
+                "raw_frame": frame.copy(),
+                "annotated": annotated.copy(),
+                "detections": detections
+            })
 
-            results = _model(
-                frame,
-                conf=0.35,
-                iou=0.50,
-                imgsz=960,
-                verbose=False,
-            )
+            last_detection_frame = frame_count
 
-            result = results[0]
-            annotated = result.plot(labels=False)
+        if current_event and (
+            frame_count - last_detection_frame > event_window_frames
+        ):
+            save_event(current_event, event_id)
+            event_id += 1
+            current_event = []
+            last_detection_frame = None
 
-            if result.boxes is not None and result.keypoints is not None:
-                boxes = result.boxes.xyxy.cpu().numpy()
-                confs = result.boxes.conf.cpu().numpy()
-                keypoints = result.keypoints.data.cpu().numpy()
+        cv2.imshow("Video posture intelligent sampling", annotated)
 
-                for person_id, (box, conf, kpts) in enumerate(zip(boxes, confs, keypoints)):
-                    if not is_valid_person(box, kpts, frame.shape):
-                        continue
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            break
 
-                    posture = classify_posture(box, kpts)
-                    confidence = round(float(conf), 3)
-                    bbox = [round(float(x), 2) for x in box]
-
-                    x1, y1, x2, y2 = map(int, box)
-                    draw_posture_label(annotated, posture, x1, y1)
-
-                    detection = {
-                        "video_path": video_path,
-                        "frame_id": frame_id,
-                        "frame_index": saved_id,
-                        "image_path": raw_frame_path,
-                        "annotated_image_path": annotated_frame_path,
-                        "person_id": person_id,
-                        "label": "person",
-                        "posture": posture,
-                        "confidence": confidence,
-                        "bounding_box": bbox,
-                    }
-
-                    frame_json["detections"].append(detection)
-                    yolo_json["detections"].append(detection)
-
-                    yolo_json["summary"]["persons_detected"] += 1
-
-                    if posture == "DEBOUT":
-                        yolo_json["summary"]["standing_count"] += 1
-                    elif posture == "ALLONGE":
-                        yolo_json["summary"]["lying_count"] += 1
-                    else:
-                        yolo_json["summary"]["uncertain_count"] += 1
-
-                    if confidence < 0.60:
-                        yolo_json["summary"]["low_confidence_count"] += 1
-
-            cv2.imwrite(annotated_frame_path, annotated)
-
-        except Exception as e:
-            frame_json["error"] = str(e)
-
-        yolo_json["frames"].append(frame_json)
-        yolo_json["frames_analyzed"] += 1
-
-        saved_id += 1
-        frame_id += 1
+    if current_event:
+        save_event(current_event, event_id)
 
     cap.release()
+    cv2.destroyAllWindows()
 
-    with open(YOLO_JSON_PATH, "w", encoding="utf-8") as f:
+    yolo_json = {
+        "run_name": run_info["run_name"],
+        "video_path": path,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
+        "output_paths": {
+            "run_dir": run_info["run_dir"],
+            "raw_images_dir": run_info["raw_images_dir"],
+            "annotated_images_dir": run_info["annotated_images_dir"],
+            "json_path": run_info["json_path"]
+        },
+        "parameters": {
+            "model": "yolov8n-pose.pt",
+            "analysis_stride": ANALYSIS_STRIDE,
+            "event_window_seconds": EVENT_WINDOW_SECONDS,
+            "max_frames_per_event": MAX_FRAMES_PER_EVENT,
+            "fps": float(fps)
+        },
+        "frames_analyzed": int(len(saved_frames)),
+        "frames": saved_frames,
+        "detections": all_detections,
+        "summary": {
+            "persons_detected": int(len(all_detections)),
+            "standing_count": int(sum(1 for d in all_detections if d["posture"] == "DEBOUT")),
+            "lying_count": int(sum(1 for d in all_detections if d["posture"] == "ALLONGE")),
+            "uncertain_count": int(sum(1 for d in all_detections if d["posture"] == "INCERTAIN")),
+            "vlm_candidate_count": int(sum(1 for d in all_detections if d["needs_vlm"])),
+            "events_count": int(event_id + 1 if saved_frames else 0)
+        }
+    }
+
+    yolo_json = make_json_safe(yolo_json)
+
+    with open(run_info["json_path"], "w", encoding="utf-8") as f:
         json.dump(yolo_json, f, indent=2, ensure_ascii=False)
+
+    print(f"Analyse terminee.")
+    print(f"Run dir: {run_info['run_dir']}")
+    print(f"JSON global: {run_info['json_path']}")
 
     return yolo_json
 
 
-def select_vlm_candidates(yolo_json: Dict[str, Any], instruction: str) -> List[str]:
-    """
-    Sélectionne les images à envoyer au VLM.
-    Règles :
-    - uniquement si la demande concerne une personne
-    - posture INCERTAIN
-    - confiance faible
-    - frame sans détection alors que la mission parle de personne
-    """
-    asks_about_person = any(
-        kw in instruction.lower()
-        for kw in PERSON_KEYWORDS
-    )
+# ============================================
+# NODE LANGGRAPH
+# ============================================
 
-    if not asks_about_person:
-        return []
+def find_first_video(videos_dir="videos"):
+    videos_path = Path(videos_dir)
 
-    candidates: List[str] = []
+    if not videos_path.exists():
+        return None
+
+    for ext in ["*.mp4", "*.mov", "*.avi", "*.mkv", "*.MP4", "*.MOV"]:
+        files = list(videos_path.glob(ext))
+        if files:
+            return str(files[0])
+
+    return None
+
+
+def select_vlm_candidates(yolo_json, instruction=""):
+    candidates = []
 
     for frame in yolo_json.get("frames", []):
         detections = frame.get("detections", [])
 
-        if not detections:
-            candidates.append(frame["image_path"])
-            continue
+        should_send = any(
+            d.get("needs_vlm")
+            or d.get("posture") == "ALLONGE"
+            or d.get("posture") == "INCERTAIN"
+            or d.get("uncertainty_score", 0) >= 0.45
+            for d in detections
+        )
 
-        for det in detections:
-            if det.get("label") != "person":
-                continue
+        if should_send:
+            candidates.append({
+                "event_id": frame.get("event_id"),
+                "frame_index": frame.get("frame_index"),
+                "timestamp_sec": frame.get("timestamp_sec"),
+                "image_path": frame.get("raw_image_path"),
+                "annotated_image_path": frame.get("annotated_image_path"),
+                "detections": detections,
+                "reason": "posture critique/incertaine ou incertitude élevée"
+            })
 
-            if det.get("confidence", 0.0) < 0.60:
-                candidates.append(det["image_path"])
-
-            if det.get("posture") == "INCERTAIN":
-                candidates.append(det["image_path"])
-
-    # supprime les doublons en gardant l'ordre
-    return list(dict.fromkeys(candidates))
+    return candidates
 
 
-# ============================================================
-# NOEUD LANGGRAPH
-# ============================================================
+def analyze_video_with_yolo(video_path):
+    return run_video(video_path)
+
 
 def yolo_node(state: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Agent YOLO.
-
-    Contrat :
-        Entrée :
-            state["video_path"] ou première vidéo trouvée dans videos/
-
-        Sortie :
-            {
-                "yolo_json": JSON structuré,
-                "images": paths des frames extraites,
-                "detections": liste globale des détections,
-                "vlm_candidates": paths des images à envoyer au VLM
-            }
-    """
-    instruction: str = state.get("instruction", "")
-
+    instruction = state.get("instruction", "")
     video_path = state.get("video_path") or find_first_video()
 
     if not video_path:
@@ -403,34 +515,62 @@ def yolo_node(state: Dict[str, Any]) -> Dict[str, Any]:
                 "standing_count": 0,
                 "lying_count": 0,
                 "uncertain_count": 0,
-                "low_confidence_count": 0,
+                "vlm_candidate_count": 0
             },
-            "error": "Aucune vidéo trouvée. Place une vidéo dans le dossier videos/.",
+            "error": "Aucune vidéo trouvée. Place une vidéo dans le dossier videos/."
         }
 
         return {
+            **state,
             "video_path": "",
             "yolo_json": yolo_json,
             "images": [],
             "detections": [],
-            "vlm_candidates": [],
+            "vlm_candidates": []
         }
 
     yolo_json = analyze_video_with_yolo(video_path)
 
+    frames = yolo_json.get("frames", [])
+
     images = [
-        frame["image_path"]
-        for frame in yolo_json.get("frames", [])
-        if frame.get("image_path")
+        frame.get("raw_image_path")
+        for frame in frames
+        if frame.get("raw_image_path")
     ]
 
     detections = yolo_json.get("detections", [])
-    vlm_candidates = select_vlm_candidates(yolo_json, instruction)
+
+    vlm_candidates = select_vlm_candidates(
+        yolo_json,
+        instruction
+    )
+
+    yolo_json["summary"]["vlm_candidate_count"] = len(vlm_candidates)
 
     return {
+        **state,
         "video_path": video_path,
         "yolo_json": yolo_json,
         "images": images,
         "detections": detections,
-        "vlm_candidates": vlm_candidates,
+        "vlm_candidates": vlm_candidates
     }
+
+
+# ============================================
+# MAIN
+# ============================================
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--video",
+        required=True,
+        help="Chemin vers la vidéo à analyser"
+    )
+
+    args = parser.parse_args()
+
+    run_video(args.video)

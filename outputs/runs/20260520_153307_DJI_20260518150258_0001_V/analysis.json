@@ -1,0 +1,3733 @@
+{
+  "run_name": "20260520_153307_DJI_20260518150258_0001_V",
+  "video_path": "/Users/nezar/Documents/Projets/TestYolo/DRONE_DATA/videos/interieur/DJI_20260518150258_0001_V.MP4",
+  "created_at": "2026-05-20T15:34:20",
+  "output_paths": {
+    "run_dir": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V",
+    "raw_images_dir": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw",
+    "annotated_images_dir": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated",
+    "json_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/analysis.json"
+  },
+  "parameters": {
+    "model": "yolov8n-pose.pt",
+    "analysis_stride": 5,
+    "event_window_seconds": 2,
+    "max_frames_per_event": 3,
+    "fps": 29.97002997002997
+  },
+  "frames_analyzed": 39,
+  "frames": [
+    {
+      "event_id": 0,
+      "frame_index": 215,
+      "timestamp_sec": 7.17,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_000_frame_000215_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_000_frame_000215_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 215,
+          "timestamp_sec": 7.17,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.42883145809173584,
+          "bbox_xyxy": [
+            1751,
+            0,
+            1917,
+            108
+          ],
+          "bbox_center": [
+            1834.0,
+            54.0
+          ],
+          "bbox_size": {
+            "width": 166.0,
+            "height": 108.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 0,
+      "frame_index": 225,
+      "timestamp_sec": 7.51,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_000_frame_000225_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_000_frame_000225_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 225,
+          "timestamp_sec": 7.51,
+          "class": "person",
+          "posture": "INCERTAIN",
+          "uncertainty_score": 0.6,
+          "risk_level": "A_VERIFIER",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.7047426104545593,
+          "bbox_xyxy": [
+            1788,
+            0,
+            1919,
+            123
+          ],
+          "bbox_center": [
+            1853.5,
+            61.5
+          ],
+          "bbox_size": {
+            "width": 131.0,
+            "height": 123.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 0,
+        "incertain_count": 1,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 0,
+      "frame_index": 285,
+      "timestamp_sec": 9.51,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_000_frame_000285_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_000_frame_000285_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 285,
+          "timestamp_sec": 9.51,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.18,
+          "risk_level": "FAIBLE",
+          "position_in_image": "milieu-gauche",
+          "yolo_confidence": 0.6607763171195984,
+          "bbox_xyxy": [
+            9,
+            255,
+            140,
+            493
+          ],
+          "bbox_center": [
+            74.5,
+            374.0
+          ],
+          "bbox_size": {
+            "width": 131.0,
+            "height": 238.0
+          },
+          "visible_keypoints_count": 13,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 1,
+      "frame_index": 930,
+      "timestamp_sec": 31.03,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_001_frame_000930_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_001_frame_000930_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 930,
+          "timestamp_sec": 31.03,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.20000000298023224,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-gauche",
+          "yolo_confidence": 0.7301307320594788,
+          "bbox_xyxy": [
+            20,
+            627,
+            180,
+            749
+          ],
+          "bbox_center": [
+            100.0,
+            688.0
+          ],
+          "bbox_size": {
+            "width": 160.0,
+            "height": 122.0
+          },
+          "visible_keypoints_count": 14,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 1,
+      "frame_index": 920,
+      "timestamp_sec": 30.7,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_001_frame_000920_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_001_frame_000920_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 920,
+          "timestamp_sec": 30.7,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.20999999344348907,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-gauche",
+          "yolo_confidence": 0.6738727688789368,
+          "bbox_xyxy": [
+            138,
+            553,
+            319,
+            694
+          ],
+          "bbox_center": [
+            228.5,
+            623.5
+          ],
+          "bbox_size": {
+            "width": 181.0,
+            "height": 141.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 1,
+      "frame_index": 915,
+      "timestamp_sec": 30.53,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_001_frame_000915_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_001_frame_000915_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 915,
+          "timestamp_sec": 30.53,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.2800000011920929,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-gauche",
+          "yolo_confidence": 0.6964044570922852,
+          "bbox_xyxy": [
+            191,
+            523,
+            368,
+            668
+          ],
+          "bbox_center": [
+            279.5,
+            595.5
+          ],
+          "bbox_size": {
+            "width": 177.0,
+            "height": 145.0
+          },
+          "visible_keypoints_count": 14,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 2,
+      "frame_index": 1605,
+      "timestamp_sec": 53.55,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_002_frame_001605_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_002_frame_001605_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 1605,
+          "timestamp_sec": 53.55,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.14,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.3954429626464844,
+          "bbox_xyxy": [
+            1462,
+            123,
+            1629,
+            330
+          ],
+          "bbox_center": [
+            1545.5,
+            226.5
+          ],
+          "bbox_size": {
+            "width": 167.0,
+            "height": 207.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 3,
+      "frame_index": 1915,
+      "timestamp_sec": 63.9,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_003_frame_001915_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_003_frame_001915_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 1915,
+          "timestamp_sec": 63.9,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.10000000149011612,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-droite",
+          "yolo_confidence": 0.8630337715148926,
+          "bbox_xyxy": [
+            1734,
+            492,
+            1916,
+            623
+          ],
+          "bbox_center": [
+            1825.0,
+            557.5
+          ],
+          "bbox_size": {
+            "width": 182.0,
+            "height": 131.0
+          },
+          "visible_keypoints_count": 13,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 3,
+      "frame_index": 1920,
+      "timestamp_sec": 64.06,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_003_frame_001920_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_003_frame_001920_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 1920,
+          "timestamp_sec": 64.06,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.17000000178813934,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-droite",
+          "yolo_confidence": 0.8398586511611938,
+          "bbox_xyxy": [
+            1746,
+            500,
+            1918,
+            629
+          ],
+          "bbox_center": [
+            1832.0,
+            564.5
+          ],
+          "bbox_size": {
+            "width": 172.0,
+            "height": 129.0
+          },
+          "visible_keypoints_count": 13,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 3,
+      "frame_index": 1805,
+      "timestamp_sec": 60.23,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_003_frame_001805_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_003_frame_001805_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 1805,
+          "timestamp_sec": 60.23,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.12,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-centre",
+          "yolo_confidence": 0.592219889163971,
+          "bbox_xyxy": [
+            1196,
+            101,
+            1265,
+            258
+          ],
+          "bbox_center": [
+            1230.5,
+            179.5
+          ],
+          "bbox_size": {
+            "width": 69.0,
+            "height": 157.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": false
+        },
+        {
+          "id": 1,
+          "frame_index": 1805,
+          "timestamp_sec": 60.23,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.12,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-centre",
+          "yolo_confidence": 0.5668502449989319,
+          "bbox_xyxy": [
+            1212,
+            223,
+            1336,
+            352
+          ],
+          "bbox_center": [
+            1274.0,
+            287.5
+          ],
+          "bbox_size": {
+            "width": 124.0,
+            "height": 129.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 0,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 4,
+      "frame_index": 2045,
+      "timestamp_sec": 68.23,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_004_frame_002045_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_004_frame_002045_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2045,
+          "timestamp_sec": 68.23,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.33,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.384815514087677,
+          "bbox_xyxy": [
+            582,
+            0,
+            646,
+            119
+          ],
+          "bbox_center": [
+            614.0,
+            59.5
+          ],
+          "bbox_size": {
+            "width": 64.0,
+            "height": 119.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 4,
+      "frame_index": 2055,
+      "timestamp_sec": 68.57,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_004_frame_002055_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_004_frame_002055_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2055,
+          "timestamp_sec": 68.57,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.33,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.36784827709198,
+          "bbox_xyxy": [
+            578,
+            0,
+            643,
+            131
+          ],
+          "bbox_center": [
+            610.5,
+            65.5
+          ],
+          "bbox_size": {
+            "width": 65.0,
+            "height": 131.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 5,
+      "frame_index": 2170,
+      "timestamp_sec": 72.41,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_005_frame_002170_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_005_frame_002170_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2170,
+          "timestamp_sec": 72.41,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.5271514654159546,
+          "bbox_xyxy": [
+            537,
+            9,
+            644,
+            181
+          ],
+          "bbox_center": [
+            590.5,
+            95.0
+          ],
+          "bbox_size": {
+            "width": 107.0,
+            "height": 172.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 5,
+      "frame_index": 2180,
+      "timestamp_sec": 72.74,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_005_frame_002180_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_005_frame_002180_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2180,
+          "timestamp_sec": 72.74,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.12,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.3789741098880768,
+          "bbox_xyxy": [
+            535,
+            27,
+            626,
+            200
+          ],
+          "bbox_center": [
+            580.5,
+            113.5
+          ],
+          "bbox_size": {
+            "width": 91.0,
+            "height": 173.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 5,
+      "frame_index": 2175,
+      "timestamp_sec": 72.57,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_005_frame_002175_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_005_frame_002175_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2175,
+          "timestamp_sec": 72.57,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.3526532053947449,
+          "bbox_xyxy": [
+            534,
+            18,
+            640,
+            193
+          ],
+          "bbox_center": [
+            587.0,
+            105.5
+          ],
+          "bbox_size": {
+            "width": 106.0,
+            "height": 175.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 6,
+      "frame_index": 2265,
+      "timestamp_sec": 75.58,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_006_frame_002265_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_006_frame_002265_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2265,
+          "timestamp_sec": 75.58,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.4779718220233917,
+          "bbox_xyxy": [
+            479,
+            177,
+            578,
+            327
+          ],
+          "bbox_center": [
+            528.5,
+            252.0
+          ],
+          "bbox_size": {
+            "width": 99.0,
+            "height": 150.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 6,
+      "frame_index": 2295,
+      "timestamp_sec": 76.58,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_006_frame_002295_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_006_frame_002295_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2295,
+          "timestamp_sec": 76.58,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.4740508198738098,
+          "bbox_xyxy": [
+            469,
+            210,
+            568,
+            372
+          ],
+          "bbox_center": [
+            518.5,
+            291.0
+          ],
+          "bbox_size": {
+            "width": 99.0,
+            "height": 162.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 6,
+      "frame_index": 2300,
+      "timestamp_sec": 76.74,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_006_frame_002300_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_006_frame_002300_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2300,
+          "timestamp_sec": 76.74,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.458634614944458,
+          "bbox_xyxy": [
+            463,
+            221,
+            563,
+            374
+          ],
+          "bbox_center": [
+            513.0,
+            297.5
+          ],
+          "bbox_size": {
+            "width": 100.0,
+            "height": 153.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 7,
+      "frame_index": 2470,
+      "timestamp_sec": 82.42,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_007_frame_002470_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_007_frame_002470_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2470,
+          "timestamp_sec": 82.42,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.25999999046325684,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-gauche",
+          "yolo_confidence": 0.7895727753639221,
+          "bbox_xyxy": [
+            148,
+            836,
+            293,
+            954
+          ],
+          "bbox_center": [
+            220.5,
+            895.0
+          ],
+          "bbox_size": {
+            "width": 145.0,
+            "height": 118.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": true
+        },
+        {
+          "id": 1,
+          "frame_index": 2470,
+          "timestamp_sec": 82.42,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.33,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.5543908476829529,
+          "bbox_xyxy": [
+            1210,
+            16,
+            1443,
+            387
+          ],
+          "bbox_center": [
+            1326.5,
+            201.5
+          ],
+          "bbox_size": {
+            "width": 233.0,
+            "height": 371.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": false
+        },
+        {
+          "id": 2,
+          "frame_index": 2470,
+          "timestamp_sec": 82.42,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-gauche",
+          "yolo_confidence": 0.48661935329437256,
+          "bbox_xyxy": [
+            170,
+            948,
+            317,
+            1050
+          ],
+          "bbox_center": [
+            243.5,
+            999.0
+          ],
+          "bbox_size": {
+            "width": 147.0,
+            "height": 102.0
+          },
+          "visible_keypoints_count": 13,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 3,
+        "allonge_count": 2,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 7,
+      "frame_index": 2460,
+      "timestamp_sec": 82.08,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_007_frame_002460_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_007_frame_002460_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2460,
+          "timestamp_sec": 82.08,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.33000001311302185,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-gauche",
+          "yolo_confidence": 0.5127975940704346,
+          "bbox_xyxy": [
+            170,
+            779,
+            304,
+            893
+          ],
+          "bbox_center": [
+            237.0,
+            836.0
+          ],
+          "bbox_size": {
+            "width": 134.0,
+            "height": 114.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": true
+        },
+        {
+          "id": 1,
+          "frame_index": 2460,
+          "timestamp_sec": 82.08,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.23999999463558197,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-gauche",
+          "yolo_confidence": 0.481827050447464,
+          "bbox_xyxy": [
+            190,
+            885,
+            328,
+            994
+          ],
+          "bbox_center": [
+            259.0,
+            939.5
+          ],
+          "bbox_size": {
+            "width": 138.0,
+            "height": 109.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 2,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 7,
+      "frame_index": 2485,
+      "timestamp_sec": 82.92,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_007_frame_002485_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_007_frame_002485_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2485,
+          "timestamp_sec": 82.92,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.30000001192092896,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-gauche",
+          "yolo_confidence": 0.7993422746658325,
+          "bbox_xyxy": [
+            119,
+            937,
+            272,
+            1064
+          ],
+          "bbox_center": [
+            195.5,
+            1000.5
+          ],
+          "bbox_size": {
+            "width": 153.0,
+            "height": 127.0
+          },
+          "visible_keypoints_count": 13,
+          "needs_vlm": true
+        },
+        {
+          "id": 1,
+          "frame_index": 2485,
+          "timestamp_sec": 82.92,
+          "class": "person",
+          "posture": "INCERTAIN",
+          "uncertainty_score": 0.6,
+          "risk_level": "A_VERIFIER",
+          "position_in_image": "bas-gauche",
+          "yolo_confidence": 0.36201855540275574,
+          "bbox_xyxy": [
+            117,
+            809,
+            272,
+            945
+          ],
+          "bbox_center": [
+            194.5,
+            877.0
+          ],
+          "bbox_size": {
+            "width": 155.0,
+            "height": 136.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 1,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 8,
+      "frame_index": 2610,
+      "timestamp_sec": 87.09,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_008_frame_002610_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_008_frame_002610_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 2610,
+          "timestamp_sec": 87.09,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.22,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.6053431630134583,
+          "bbox_xyxy": [
+            402,
+            0,
+            518,
+            181
+          ],
+          "bbox_center": [
+            460.0,
+            90.5
+          ],
+          "bbox_size": {
+            "width": 116.0,
+            "height": 181.0
+          },
+          "visible_keypoints_count": 11,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 9,
+      "frame_index": 3630,
+      "timestamp_sec": 121.12,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_009_frame_003630_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_009_frame_003630_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 3630,
+          "timestamp_sec": 121.12,
+          "class": "person",
+          "posture": "INCERTAIN",
+          "uncertainty_score": 0.6,
+          "risk_level": "A_VERIFIER",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.4425855875015259,
+          "bbox_xyxy": [
+            1493,
+            0,
+            1920,
+            386
+          ],
+          "bbox_center": [
+            1706.5,
+            193.0
+          ],
+          "bbox_size": {
+            "width": 427.0,
+            "height": 386.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 0,
+        "incertain_count": 1,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 9,
+      "frame_index": 3635,
+      "timestamp_sec": 121.29,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_009_frame_003635_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_009_frame_003635_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 3635,
+          "timestamp_sec": 121.29,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.33,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.4039950370788574,
+          "bbox_xyxy": [
+            1539,
+            0,
+            1919,
+            376
+          ],
+          "bbox_center": [
+            1729.0,
+            188.0
+          ],
+          "bbox_size": {
+            "width": 380.0,
+            "height": 376.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 10,
+      "frame_index": 4515,
+      "timestamp_sec": 150.65,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_010_frame_004515_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_010_frame_004515_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 4515,
+          "timestamp_sec": 150.65,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.35,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.767416775226593,
+          "bbox_xyxy": [
+            1614,
+            0,
+            1920,
+            474
+          ],
+          "bbox_center": [
+            1767.0,
+            237.0
+          ],
+          "bbox_size": {
+            "width": 306.0,
+            "height": 474.0
+          },
+          "visible_keypoints_count": 5,
+          "needs_vlm": false
+        },
+        {
+          "id": 1,
+          "frame_index": 4515,
+          "timestamp_sec": 150.65,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.14,
+          "risk_level": "FAIBLE",
+          "position_in_image": "milieu-centre",
+          "yolo_confidence": 0.3687955141067505,
+          "bbox_xyxy": [
+            608,
+            595,
+            708,
+            807
+          ],
+          "bbox_center": [
+            658.0,
+            701.0
+          ],
+          "bbox_size": {
+            "width": 100.0,
+            "height": 212.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 0,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 10,
+      "frame_index": 4520,
+      "timestamp_sec": 150.82,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_010_frame_004520_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_010_frame_004520_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 4520,
+          "timestamp_sec": 150.82,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.24,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.8715510368347168,
+          "bbox_xyxy": [
+            1624,
+            0,
+            1920,
+            485
+          ],
+          "bbox_center": [
+            1772.0,
+            242.5
+          ],
+          "bbox_size": {
+            "width": 296.0,
+            "height": 485.0
+          },
+          "visible_keypoints_count": 10,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 10,
+      "frame_index": 4510,
+      "timestamp_sec": 150.48,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_010_frame_004510_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_010_frame_004510_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 4510,
+          "timestamp_sec": 150.48,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.29,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.7551074624061584,
+          "bbox_xyxy": [
+            1601,
+            0,
+            1919,
+            461
+          ],
+          "bbox_center": [
+            1760.0,
+            230.5
+          ],
+          "bbox_size": {
+            "width": 318.0,
+            "height": 461.0
+          },
+          "visible_keypoints_count": 8,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 11,
+      "frame_index": 5295,
+      "timestamp_sec": 176.68,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_011_frame_005295_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_011_frame_005295_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 5295,
+          "timestamp_sec": 176.68,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.28999999165534973,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-droite",
+          "yolo_confidence": 0.8240026831626892,
+          "bbox_xyxy": [
+            1465,
+            938,
+            1629,
+            1074
+          ],
+          "bbox_center": [
+            1547.0,
+            1006.0
+          ],
+          "bbox_size": {
+            "width": 164.0,
+            "height": 136.0
+          },
+          "visible_keypoints_count": 14,
+          "needs_vlm": true
+        },
+        {
+          "id": 1,
+          "frame_index": 5295,
+          "timestamp_sec": 176.68,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.30000001192092896,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-droite",
+          "yolo_confidence": 0.5316476225852966,
+          "bbox_xyxy": [
+            1446,
+            325,
+            1538,
+            401
+          ],
+          "bbox_center": [
+            1492.0,
+            363.0
+          ],
+          "bbox_size": {
+            "width": 92.0,
+            "height": 76.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 2,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 11,
+      "frame_index": 5280,
+      "timestamp_sec": 176.18,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_011_frame_005280_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_011_frame_005280_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 5280,
+          "timestamp_sec": 176.18,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.14000000059604645,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-droite",
+          "yolo_confidence": 0.8073393106460571,
+          "bbox_xyxy": [
+            1370,
+            950,
+            1546,
+            1080
+          ],
+          "bbox_center": [
+            1458.0,
+            1015.0
+          ],
+          "bbox_size": {
+            "width": 176.0,
+            "height": 130.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": true
+        },
+        {
+          "id": 1,
+          "frame_index": 5280,
+          "timestamp_sec": 176.18,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.6966195702552795,
+          "bbox_xyxy": [
+            1407,
+            269,
+            1501,
+            394
+          ],
+          "bbox_center": [
+            1454.0,
+            331.5
+          ],
+          "bbox_size": {
+            "width": 94.0,
+            "height": 125.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        },
+        {
+          "id": 2,
+          "frame_index": 5280,
+          "timestamp_sec": 176.18,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.4273330569267273,
+          "bbox_xyxy": [
+            895,
+            694,
+            1097,
+            924
+          ],
+          "bbox_center": [
+            996.0,
+            809.0
+          ],
+          "bbox_size": {
+            "width": 202.0,
+            "height": 230.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 3,
+        "allonge_count": 1,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 11,
+      "frame_index": 5285,
+      "timestamp_sec": 176.34,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_011_frame_005285_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_011_frame_005285_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 5285,
+          "timestamp_sec": 176.34,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05000000074505806,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-droite",
+          "yolo_confidence": 0.7578095197677612,
+          "bbox_xyxy": [
+            1394,
+            952,
+            1578,
+            1080
+          ],
+          "bbox_center": [
+            1486.0,
+            1016.0
+          ],
+          "bbox_size": {
+            "width": 184.0,
+            "height": 128.0
+          },
+          "visible_keypoints_count": 14,
+          "needs_vlm": true
+        },
+        {
+          "id": 1,
+          "frame_index": 5285,
+          "timestamp_sec": 176.34,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.6293284893035889,
+          "bbox_xyxy": [
+            1418,
+            286,
+            1514,
+            399
+          ],
+          "bbox_center": [
+            1466.0,
+            342.5
+          ],
+          "bbox_size": {
+            "width": 96.0,
+            "height": 113.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        },
+        {
+          "id": 2,
+          "frame_index": 5285,
+          "timestamp_sec": 176.34,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.36048969626426697,
+          "bbox_xyxy": [
+            895,
+            693,
+            1097,
+            922
+          ],
+          "bbox_center": [
+            996.0,
+            807.5
+          ],
+          "bbox_size": {
+            "width": 202.0,
+            "height": 229.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 3,
+        "allonge_count": 1,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 12,
+      "frame_index": 5775,
+      "timestamp_sec": 192.69,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_012_frame_005775_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_012_frame_005775_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 5775,
+          "timestamp_sec": 192.69,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-droite",
+          "yolo_confidence": 0.7556548714637756,
+          "bbox_xyxy": [
+            1647,
+            524,
+            1841,
+            640
+          ],
+          "bbox_center": [
+            1744.0,
+            582.0
+          ],
+          "bbox_size": {
+            "width": 194.0,
+            "height": 116.0
+          },
+          "visible_keypoints_count": 12,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 12,
+      "frame_index": 5770,
+      "timestamp_sec": 192.53,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_012_frame_005770_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_012_frame_005770_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 5770,
+          "timestamp_sec": 192.53,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-droite",
+          "yolo_confidence": 0.5999700427055359,
+          "bbox_xyxy": [
+            1649,
+            524,
+            1841,
+            646
+          ],
+          "bbox_center": [
+            1745.0,
+            585.0
+          ],
+          "bbox_size": {
+            "width": 192.0,
+            "height": 122.0
+          },
+          "visible_keypoints_count": 13,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 12,
+      "frame_index": 5755,
+      "timestamp_sec": 192.03,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_012_frame_005755_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_012_frame_005755_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 5755,
+          "timestamp_sec": 192.03,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.23999999463558197,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-droite",
+          "yolo_confidence": 0.767634391784668,
+          "bbox_xyxy": [
+            1561,
+            529,
+            1705,
+            644
+          ],
+          "bbox_center": [
+            1633.0,
+            586.5
+          ],
+          "bbox_size": {
+            "width": 144.0,
+            "height": 115.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 13,
+      "frame_index": 6155,
+      "timestamp_sec": 205.37,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_013_frame_006155_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_013_frame_006155_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 6155,
+          "timestamp_sec": 205.37,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.6527307629585266,
+          "bbox_xyxy": [
+            1083,
+            729,
+            1274,
+            858
+          ],
+          "bbox_center": [
+            1178.5,
+            793.5
+          ],
+          "bbox_size": {
+            "width": 191.0,
+            "height": 129.0
+          },
+          "visible_keypoints_count": 13,
+          "needs_vlm": true
+        },
+        {
+          "id": 1,
+          "frame_index": 6155,
+          "timestamp_sec": 205.37,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.22,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.5349655747413635,
+          "bbox_xyxy": [
+            1822,
+            231,
+            1920,
+            392
+          ],
+          "bbox_center": [
+            1871.0,
+            311.5
+          ],
+          "bbox_size": {
+            "width": 98.0,
+            "height": 161.0
+          },
+          "visible_keypoints_count": 11,
+          "needs_vlm": false
+        },
+        {
+          "id": 2,
+          "frame_index": 6155,
+          "timestamp_sec": 205.37,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.12,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.3598780035972595,
+          "bbox_xyxy": [
+            1749,
+            232,
+            1890,
+            384
+          ],
+          "bbox_center": [
+            1819.5,
+            308.0
+          ],
+          "bbox_size": {
+            "width": 141.0,
+            "height": 152.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 3,
+        "allonge_count": 1,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 13,
+      "frame_index": 6170,
+      "timestamp_sec": 205.87,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_013_frame_006170_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_013_frame_006170_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 6170,
+          "timestamp_sec": 205.87,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "milieu-droite",
+          "yolo_confidence": 0.7192995548248291,
+          "bbox_xyxy": [
+            1782,
+            331,
+            1916,
+            468
+          ],
+          "bbox_center": [
+            1849.0,
+            399.5
+          ],
+          "bbox_size": {
+            "width": 134.0,
+            "height": 137.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        },
+        {
+          "id": 1,
+          "frame_index": 6170,
+          "timestamp_sec": 205.87,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.12,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.7031419277191162,
+          "bbox_xyxy": [
+            1672,
+            161,
+            1812,
+            322
+          ],
+          "bbox_center": [
+            1742.0,
+            241.5
+          ],
+          "bbox_size": {
+            "width": 140.0,
+            "height": 161.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": false
+        },
+        {
+          "id": 2,
+          "frame_index": 6170,
+          "timestamp_sec": 205.87,
+          "class": "person",
+          "posture": "INCERTAIN",
+          "uncertainty_score": 0.6,
+          "risk_level": "A_VERIFIER",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.5321913957595825,
+          "bbox_xyxy": [
+            1359,
+            0,
+            1526,
+            149
+          ],
+          "bbox_center": [
+            1442.5,
+            74.5
+          ],
+          "bbox_size": {
+            "width": 167.0,
+            "height": 149.0
+          },
+          "visible_keypoints_count": 6,
+          "needs_vlm": true
+        },
+        {
+          "id": 3,
+          "frame_index": 6170,
+          "timestamp_sec": 205.87,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.14,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.45067477226257324,
+          "bbox_xyxy": [
+            1795,
+            200,
+            1919,
+            351
+          ],
+          "bbox_center": [
+            1857.0,
+            275.5
+          ],
+          "bbox_size": {
+            "width": 124.0,
+            "height": 151.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": false
+        },
+        {
+          "id": 4,
+          "frame_index": 6170,
+          "timestamp_sec": 205.87,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.12,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.4104365408420563,
+          "bbox_xyxy": [
+            1613,
+            174,
+            1728,
+            318
+          ],
+          "bbox_center": [
+            1670.5,
+            246.0
+          ],
+          "bbox_size": {
+            "width": 115.0,
+            "height": 144.0
+          },
+          "visible_keypoints_count": 16,
+          "needs_vlm": false
+        },
+        {
+          "id": 5,
+          "frame_index": 6170,
+          "timestamp_sec": 205.87,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-droite",
+          "yolo_confidence": 0.4061006009578705,
+          "bbox_xyxy": [
+            1779,
+            158,
+            1906,
+            312
+          ],
+          "bbox_center": [
+            1842.5,
+            235.0
+          ],
+          "bbox_size": {
+            "width": 127.0,
+            "height": 154.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 6,
+        "allonge_count": 0,
+        "debout_count": 5,
+        "incertain_count": 1,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 13,
+      "frame_index": 6120,
+      "timestamp_sec": 204.2,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_013_frame_006120_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_013_frame_006120_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 6120,
+          "timestamp_sec": 204.2,
+          "class": "person",
+          "posture": "INCERTAIN",
+          "uncertainty_score": 0.6,
+          "risk_level": "A_VERIFIER",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.3939666450023651,
+          "bbox_xyxy": [
+            1180,
+            928,
+            1341,
+            1080
+          ],
+          "bbox_center": [
+            1260.5,
+            1004.0
+          ],
+          "bbox_size": {
+            "width": 161.0,
+            "height": 152.0
+          },
+          "visible_keypoints_count": 14,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 0,
+        "incertain_count": 1,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 14,
+      "frame_index": 6455,
+      "timestamp_sec": 215.38,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_014_frame_006455_0.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_014_frame_006455_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 6455,
+          "timestamp_sec": 215.38,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-centre",
+          "yolo_confidence": 0.8340336680412292,
+          "bbox_xyxy": [
+            581,
+            509,
+            1228,
+            912
+          ],
+          "bbox_center": [
+            904.5,
+            710.5
+          ],
+          "bbox_size": {
+            "width": 647.0,
+            "height": 403.0
+          },
+          "visible_keypoints_count": 14,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 14,
+      "frame_index": 6440,
+      "timestamp_sec": 214.88,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_014_frame_006440_1.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_014_frame_006440_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 6440,
+          "timestamp_sec": 214.88,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "milieu-centre",
+          "yolo_confidence": 0.8107635974884033,
+          "bbox_xyxy": [
+            690,
+            483,
+            1190,
+            791
+          ],
+          "bbox_center": [
+            940.0,
+            637.0
+          ],
+          "bbox_size": {
+            "width": 500.0,
+            "height": 308.0
+          },
+          "visible_keypoints_count": 12,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    },
+    {
+      "event_id": 14,
+      "frame_index": 6575,
+      "timestamp_sec": 219.39,
+      "raw_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/raw/event_014_frame_006575_2.jpg",
+      "annotated_image_path": "outputs/runs/20260520_153307_DJI_20260518150258_0001_V/annotated/event_014_frame_006575_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 6575,
+          "timestamp_sec": 219.39,
+          "class": "person",
+          "posture": "ALLONGE",
+          "uncertainty_score": 0.05,
+          "risk_level": "ELEVE",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.7784020304679871,
+          "bbox_xyxy": [
+            518,
+            669,
+            1338,
+            1071
+          ],
+          "bbox_center": [
+            928.0,
+            870.0
+          ],
+          "bbox_size": {
+            "width": 820.0,
+            "height": 402.0
+          },
+          "visible_keypoints_count": 9,
+          "needs_vlm": true
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 1,
+        "debout_count": 0,
+        "incertain_count": 0,
+        "needs_vlm": true
+      }
+    }
+  ],
+  "detections": [
+    {
+      "id": 0,
+      "frame_index": 215,
+      "timestamp_sec": 7.17,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.42883145809173584,
+      "bbox_xyxy": [
+        1751,
+        0,
+        1917,
+        108
+      ],
+      "bbox_center": [
+        1834.0,
+        54.0
+      ],
+      "bbox_size": {
+        "width": 166.0,
+        "height": 108.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 225,
+      "timestamp_sec": 7.51,
+      "class": "person",
+      "posture": "INCERTAIN",
+      "uncertainty_score": 0.6,
+      "risk_level": "A_VERIFIER",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.7047426104545593,
+      "bbox_xyxy": [
+        1788,
+        0,
+        1919,
+        123
+      ],
+      "bbox_center": [
+        1853.5,
+        61.5
+      ],
+      "bbox_size": {
+        "width": 131.0,
+        "height": 123.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 285,
+      "timestamp_sec": 9.51,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.18,
+      "risk_level": "FAIBLE",
+      "position_in_image": "milieu-gauche",
+      "yolo_confidence": 0.6607763171195984,
+      "bbox_xyxy": [
+        9,
+        255,
+        140,
+        493
+      ],
+      "bbox_center": [
+        74.5,
+        374.0
+      ],
+      "bbox_size": {
+        "width": 131.0,
+        "height": 238.0
+      },
+      "visible_keypoints_count": 13,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 930,
+      "timestamp_sec": 31.03,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.20000000298023224,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-gauche",
+      "yolo_confidence": 0.7301307320594788,
+      "bbox_xyxy": [
+        20,
+        627,
+        180,
+        749
+      ],
+      "bbox_center": [
+        100.0,
+        688.0
+      ],
+      "bbox_size": {
+        "width": 160.0,
+        "height": 122.0
+      },
+      "visible_keypoints_count": 14,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 920,
+      "timestamp_sec": 30.7,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.20999999344348907,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-gauche",
+      "yolo_confidence": 0.6738727688789368,
+      "bbox_xyxy": [
+        138,
+        553,
+        319,
+        694
+      ],
+      "bbox_center": [
+        228.5,
+        623.5
+      ],
+      "bbox_size": {
+        "width": 181.0,
+        "height": 141.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 915,
+      "timestamp_sec": 30.53,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.2800000011920929,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-gauche",
+      "yolo_confidence": 0.6964044570922852,
+      "bbox_xyxy": [
+        191,
+        523,
+        368,
+        668
+      ],
+      "bbox_center": [
+        279.5,
+        595.5
+      ],
+      "bbox_size": {
+        "width": 177.0,
+        "height": 145.0
+      },
+      "visible_keypoints_count": 14,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 1605,
+      "timestamp_sec": 53.55,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.14,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.3954429626464844,
+      "bbox_xyxy": [
+        1462,
+        123,
+        1629,
+        330
+      ],
+      "bbox_center": [
+        1545.5,
+        226.5
+      ],
+      "bbox_size": {
+        "width": 167.0,
+        "height": 207.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 1915,
+      "timestamp_sec": 63.9,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.10000000149011612,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-droite",
+      "yolo_confidence": 0.8630337715148926,
+      "bbox_xyxy": [
+        1734,
+        492,
+        1916,
+        623
+      ],
+      "bbox_center": [
+        1825.0,
+        557.5
+      ],
+      "bbox_size": {
+        "width": 182.0,
+        "height": 131.0
+      },
+      "visible_keypoints_count": 13,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 1920,
+      "timestamp_sec": 64.06,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.17000000178813934,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-droite",
+      "yolo_confidence": 0.8398586511611938,
+      "bbox_xyxy": [
+        1746,
+        500,
+        1918,
+        629
+      ],
+      "bbox_center": [
+        1832.0,
+        564.5
+      ],
+      "bbox_size": {
+        "width": 172.0,
+        "height": 129.0
+      },
+      "visible_keypoints_count": 13,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 1805,
+      "timestamp_sec": 60.23,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.12,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-centre",
+      "yolo_confidence": 0.592219889163971,
+      "bbox_xyxy": [
+        1196,
+        101,
+        1265,
+        258
+      ],
+      "bbox_center": [
+        1230.5,
+        179.5
+      ],
+      "bbox_size": {
+        "width": 69.0,
+        "height": 157.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": false
+    },
+    {
+      "id": 1,
+      "frame_index": 1805,
+      "timestamp_sec": 60.23,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.12,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-centre",
+      "yolo_confidence": 0.5668502449989319,
+      "bbox_xyxy": [
+        1212,
+        223,
+        1336,
+        352
+      ],
+      "bbox_center": [
+        1274.0,
+        287.5
+      ],
+      "bbox_size": {
+        "width": 124.0,
+        "height": 129.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2045,
+      "timestamp_sec": 68.23,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.33,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.384815514087677,
+      "bbox_xyxy": [
+        582,
+        0,
+        646,
+        119
+      ],
+      "bbox_center": [
+        614.0,
+        59.5
+      ],
+      "bbox_size": {
+        "width": 64.0,
+        "height": 119.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2055,
+      "timestamp_sec": 68.57,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.33,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.36784827709198,
+      "bbox_xyxy": [
+        578,
+        0,
+        643,
+        131
+      ],
+      "bbox_center": [
+        610.5,
+        65.5
+      ],
+      "bbox_size": {
+        "width": 65.0,
+        "height": 131.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2170,
+      "timestamp_sec": 72.41,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.5271514654159546,
+      "bbox_xyxy": [
+        537,
+        9,
+        644,
+        181
+      ],
+      "bbox_center": [
+        590.5,
+        95.0
+      ],
+      "bbox_size": {
+        "width": 107.0,
+        "height": 172.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2180,
+      "timestamp_sec": 72.74,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.12,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.3789741098880768,
+      "bbox_xyxy": [
+        535,
+        27,
+        626,
+        200
+      ],
+      "bbox_center": [
+        580.5,
+        113.5
+      ],
+      "bbox_size": {
+        "width": 91.0,
+        "height": 173.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2175,
+      "timestamp_sec": 72.57,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.3526532053947449,
+      "bbox_xyxy": [
+        534,
+        18,
+        640,
+        193
+      ],
+      "bbox_center": [
+        587.0,
+        105.5
+      ],
+      "bbox_size": {
+        "width": 106.0,
+        "height": 175.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2265,
+      "timestamp_sec": 75.58,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.4779718220233917,
+      "bbox_xyxy": [
+        479,
+        177,
+        578,
+        327
+      ],
+      "bbox_center": [
+        528.5,
+        252.0
+      ],
+      "bbox_size": {
+        "width": 99.0,
+        "height": 150.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2295,
+      "timestamp_sec": 76.58,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.4740508198738098,
+      "bbox_xyxy": [
+        469,
+        210,
+        568,
+        372
+      ],
+      "bbox_center": [
+        518.5,
+        291.0
+      ],
+      "bbox_size": {
+        "width": 99.0,
+        "height": 162.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2300,
+      "timestamp_sec": 76.74,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.458634614944458,
+      "bbox_xyxy": [
+        463,
+        221,
+        563,
+        374
+      ],
+      "bbox_center": [
+        513.0,
+        297.5
+      ],
+      "bbox_size": {
+        "width": 100.0,
+        "height": 153.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 2470,
+      "timestamp_sec": 82.42,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.25999999046325684,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-gauche",
+      "yolo_confidence": 0.7895727753639221,
+      "bbox_xyxy": [
+        148,
+        836,
+        293,
+        954
+      ],
+      "bbox_center": [
+        220.5,
+        895.0
+      ],
+      "bbox_size": {
+        "width": 145.0,
+        "height": 118.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": true
+    },
+    {
+      "id": 1,
+      "frame_index": 2470,
+      "timestamp_sec": 82.42,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.33,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.5543908476829529,
+      "bbox_xyxy": [
+        1210,
+        16,
+        1443,
+        387
+      ],
+      "bbox_center": [
+        1326.5,
+        201.5
+      ],
+      "bbox_size": {
+        "width": 233.0,
+        "height": 371.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": false
+    },
+    {
+      "id": 2,
+      "frame_index": 2470,
+      "timestamp_sec": 82.42,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-gauche",
+      "yolo_confidence": 0.48661935329437256,
+      "bbox_xyxy": [
+        170,
+        948,
+        317,
+        1050
+      ],
+      "bbox_center": [
+        243.5,
+        999.0
+      ],
+      "bbox_size": {
+        "width": 147.0,
+        "height": 102.0
+      },
+      "visible_keypoints_count": 13,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 2460,
+      "timestamp_sec": 82.08,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.33000001311302185,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-gauche",
+      "yolo_confidence": 0.5127975940704346,
+      "bbox_xyxy": [
+        170,
+        779,
+        304,
+        893
+      ],
+      "bbox_center": [
+        237.0,
+        836.0
+      ],
+      "bbox_size": {
+        "width": 134.0,
+        "height": 114.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": true
+    },
+    {
+      "id": 1,
+      "frame_index": 2460,
+      "timestamp_sec": 82.08,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.23999999463558197,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-gauche",
+      "yolo_confidence": 0.481827050447464,
+      "bbox_xyxy": [
+        190,
+        885,
+        328,
+        994
+      ],
+      "bbox_center": [
+        259.0,
+        939.5
+      ],
+      "bbox_size": {
+        "width": 138.0,
+        "height": 109.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 2485,
+      "timestamp_sec": 82.92,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.30000001192092896,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-gauche",
+      "yolo_confidence": 0.7993422746658325,
+      "bbox_xyxy": [
+        119,
+        937,
+        272,
+        1064
+      ],
+      "bbox_center": [
+        195.5,
+        1000.5
+      ],
+      "bbox_size": {
+        "width": 153.0,
+        "height": 127.0
+      },
+      "visible_keypoints_count": 13,
+      "needs_vlm": true
+    },
+    {
+      "id": 1,
+      "frame_index": 2485,
+      "timestamp_sec": 82.92,
+      "class": "person",
+      "posture": "INCERTAIN",
+      "uncertainty_score": 0.6,
+      "risk_level": "A_VERIFIER",
+      "position_in_image": "bas-gauche",
+      "yolo_confidence": 0.36201855540275574,
+      "bbox_xyxy": [
+        117,
+        809,
+        272,
+        945
+      ],
+      "bbox_center": [
+        194.5,
+        877.0
+      ],
+      "bbox_size": {
+        "width": 155.0,
+        "height": 136.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 2610,
+      "timestamp_sec": 87.09,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.22,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.6053431630134583,
+      "bbox_xyxy": [
+        402,
+        0,
+        518,
+        181
+      ],
+      "bbox_center": [
+        460.0,
+        90.5
+      ],
+      "bbox_size": {
+        "width": 116.0,
+        "height": 181.0
+      },
+      "visible_keypoints_count": 11,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 3630,
+      "timestamp_sec": 121.12,
+      "class": "person",
+      "posture": "INCERTAIN",
+      "uncertainty_score": 0.6,
+      "risk_level": "A_VERIFIER",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.4425855875015259,
+      "bbox_xyxy": [
+        1493,
+        0,
+        1920,
+        386
+      ],
+      "bbox_center": [
+        1706.5,
+        193.0
+      ],
+      "bbox_size": {
+        "width": 427.0,
+        "height": 386.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 3635,
+      "timestamp_sec": 121.29,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.33,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.4039950370788574,
+      "bbox_xyxy": [
+        1539,
+        0,
+        1919,
+        376
+      ],
+      "bbox_center": [
+        1729.0,
+        188.0
+      ],
+      "bbox_size": {
+        "width": 380.0,
+        "height": 376.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 4515,
+      "timestamp_sec": 150.65,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.35,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.767416775226593,
+      "bbox_xyxy": [
+        1614,
+        0,
+        1920,
+        474
+      ],
+      "bbox_center": [
+        1767.0,
+        237.0
+      ],
+      "bbox_size": {
+        "width": 306.0,
+        "height": 474.0
+      },
+      "visible_keypoints_count": 5,
+      "needs_vlm": false
+    },
+    {
+      "id": 1,
+      "frame_index": 4515,
+      "timestamp_sec": 150.65,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.14,
+      "risk_level": "FAIBLE",
+      "position_in_image": "milieu-centre",
+      "yolo_confidence": 0.3687955141067505,
+      "bbox_xyxy": [
+        608,
+        595,
+        708,
+        807
+      ],
+      "bbox_center": [
+        658.0,
+        701.0
+      ],
+      "bbox_size": {
+        "width": 100.0,
+        "height": 212.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 4520,
+      "timestamp_sec": 150.82,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.24,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.8715510368347168,
+      "bbox_xyxy": [
+        1624,
+        0,
+        1920,
+        485
+      ],
+      "bbox_center": [
+        1772.0,
+        242.5
+      ],
+      "bbox_size": {
+        "width": 296.0,
+        "height": 485.0
+      },
+      "visible_keypoints_count": 10,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 4510,
+      "timestamp_sec": 150.48,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.29,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.7551074624061584,
+      "bbox_xyxy": [
+        1601,
+        0,
+        1919,
+        461
+      ],
+      "bbox_center": [
+        1760.0,
+        230.5
+      ],
+      "bbox_size": {
+        "width": 318.0,
+        "height": 461.0
+      },
+      "visible_keypoints_count": 8,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 5295,
+      "timestamp_sec": 176.68,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.28999999165534973,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-droite",
+      "yolo_confidence": 0.8240026831626892,
+      "bbox_xyxy": [
+        1465,
+        938,
+        1629,
+        1074
+      ],
+      "bbox_center": [
+        1547.0,
+        1006.0
+      ],
+      "bbox_size": {
+        "width": 164.0,
+        "height": 136.0
+      },
+      "visible_keypoints_count": 14,
+      "needs_vlm": true
+    },
+    {
+      "id": 1,
+      "frame_index": 5295,
+      "timestamp_sec": 176.68,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.30000001192092896,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-droite",
+      "yolo_confidence": 0.5316476225852966,
+      "bbox_xyxy": [
+        1446,
+        325,
+        1538,
+        401
+      ],
+      "bbox_center": [
+        1492.0,
+        363.0
+      ],
+      "bbox_size": {
+        "width": 92.0,
+        "height": 76.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 5280,
+      "timestamp_sec": 176.18,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.14000000059604645,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-droite",
+      "yolo_confidence": 0.8073393106460571,
+      "bbox_xyxy": [
+        1370,
+        950,
+        1546,
+        1080
+      ],
+      "bbox_center": [
+        1458.0,
+        1015.0
+      ],
+      "bbox_size": {
+        "width": 176.0,
+        "height": 130.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": true
+    },
+    {
+      "id": 1,
+      "frame_index": 5280,
+      "timestamp_sec": 176.18,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.6966195702552795,
+      "bbox_xyxy": [
+        1407,
+        269,
+        1501,
+        394
+      ],
+      "bbox_center": [
+        1454.0,
+        331.5
+      ],
+      "bbox_size": {
+        "width": 94.0,
+        "height": 125.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 2,
+      "frame_index": 5280,
+      "timestamp_sec": 176.18,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.4273330569267273,
+      "bbox_xyxy": [
+        895,
+        694,
+        1097,
+        924
+      ],
+      "bbox_center": [
+        996.0,
+        809.0
+      ],
+      "bbox_size": {
+        "width": 202.0,
+        "height": 230.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 5285,
+      "timestamp_sec": 176.34,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05000000074505806,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-droite",
+      "yolo_confidence": 0.7578095197677612,
+      "bbox_xyxy": [
+        1394,
+        952,
+        1578,
+        1080
+      ],
+      "bbox_center": [
+        1486.0,
+        1016.0
+      ],
+      "bbox_size": {
+        "width": 184.0,
+        "height": 128.0
+      },
+      "visible_keypoints_count": 14,
+      "needs_vlm": true
+    },
+    {
+      "id": 1,
+      "frame_index": 5285,
+      "timestamp_sec": 176.34,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.6293284893035889,
+      "bbox_xyxy": [
+        1418,
+        286,
+        1514,
+        399
+      ],
+      "bbox_center": [
+        1466.0,
+        342.5
+      ],
+      "bbox_size": {
+        "width": 96.0,
+        "height": 113.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 2,
+      "frame_index": 5285,
+      "timestamp_sec": 176.34,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.36048969626426697,
+      "bbox_xyxy": [
+        895,
+        693,
+        1097,
+        922
+      ],
+      "bbox_center": [
+        996.0,
+        807.5
+      ],
+      "bbox_size": {
+        "width": 202.0,
+        "height": 229.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 5775,
+      "timestamp_sec": 192.69,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-droite",
+      "yolo_confidence": 0.7556548714637756,
+      "bbox_xyxy": [
+        1647,
+        524,
+        1841,
+        640
+      ],
+      "bbox_center": [
+        1744.0,
+        582.0
+      ],
+      "bbox_size": {
+        "width": 194.0,
+        "height": 116.0
+      },
+      "visible_keypoints_count": 12,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 5770,
+      "timestamp_sec": 192.53,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-droite",
+      "yolo_confidence": 0.5999700427055359,
+      "bbox_xyxy": [
+        1649,
+        524,
+        1841,
+        646
+      ],
+      "bbox_center": [
+        1745.0,
+        585.0
+      ],
+      "bbox_size": {
+        "width": 192.0,
+        "height": 122.0
+      },
+      "visible_keypoints_count": 13,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 5755,
+      "timestamp_sec": 192.03,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.23999999463558197,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-droite",
+      "yolo_confidence": 0.767634391784668,
+      "bbox_xyxy": [
+        1561,
+        529,
+        1705,
+        644
+      ],
+      "bbox_center": [
+        1633.0,
+        586.5
+      ],
+      "bbox_size": {
+        "width": 144.0,
+        "height": 115.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 6155,
+      "timestamp_sec": 205.37,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.6527307629585266,
+      "bbox_xyxy": [
+        1083,
+        729,
+        1274,
+        858
+      ],
+      "bbox_center": [
+        1178.5,
+        793.5
+      ],
+      "bbox_size": {
+        "width": 191.0,
+        "height": 129.0
+      },
+      "visible_keypoints_count": 13,
+      "needs_vlm": true
+    },
+    {
+      "id": 1,
+      "frame_index": 6155,
+      "timestamp_sec": 205.37,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.22,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.5349655747413635,
+      "bbox_xyxy": [
+        1822,
+        231,
+        1920,
+        392
+      ],
+      "bbox_center": [
+        1871.0,
+        311.5
+      ],
+      "bbox_size": {
+        "width": 98.0,
+        "height": 161.0
+      },
+      "visible_keypoints_count": 11,
+      "needs_vlm": false
+    },
+    {
+      "id": 2,
+      "frame_index": 6155,
+      "timestamp_sec": 205.37,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.12,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.3598780035972595,
+      "bbox_xyxy": [
+        1749,
+        232,
+        1890,
+        384
+      ],
+      "bbox_center": [
+        1819.5,
+        308.0
+      ],
+      "bbox_size": {
+        "width": 141.0,
+        "height": 152.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 6170,
+      "timestamp_sec": 205.87,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "milieu-droite",
+      "yolo_confidence": 0.7192995548248291,
+      "bbox_xyxy": [
+        1782,
+        331,
+        1916,
+        468
+      ],
+      "bbox_center": [
+        1849.0,
+        399.5
+      ],
+      "bbox_size": {
+        "width": 134.0,
+        "height": 137.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 1,
+      "frame_index": 6170,
+      "timestamp_sec": 205.87,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.12,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.7031419277191162,
+      "bbox_xyxy": [
+        1672,
+        161,
+        1812,
+        322
+      ],
+      "bbox_center": [
+        1742.0,
+        241.5
+      ],
+      "bbox_size": {
+        "width": 140.0,
+        "height": 161.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": false
+    },
+    {
+      "id": 2,
+      "frame_index": 6170,
+      "timestamp_sec": 205.87,
+      "class": "person",
+      "posture": "INCERTAIN",
+      "uncertainty_score": 0.6,
+      "risk_level": "A_VERIFIER",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.5321913957595825,
+      "bbox_xyxy": [
+        1359,
+        0,
+        1526,
+        149
+      ],
+      "bbox_center": [
+        1442.5,
+        74.5
+      ],
+      "bbox_size": {
+        "width": 167.0,
+        "height": 149.0
+      },
+      "visible_keypoints_count": 6,
+      "needs_vlm": true
+    },
+    {
+      "id": 3,
+      "frame_index": 6170,
+      "timestamp_sec": 205.87,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.14,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.45067477226257324,
+      "bbox_xyxy": [
+        1795,
+        200,
+        1919,
+        351
+      ],
+      "bbox_center": [
+        1857.0,
+        275.5
+      ],
+      "bbox_size": {
+        "width": 124.0,
+        "height": 151.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": false
+    },
+    {
+      "id": 4,
+      "frame_index": 6170,
+      "timestamp_sec": 205.87,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.12,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.4104365408420563,
+      "bbox_xyxy": [
+        1613,
+        174,
+        1728,
+        318
+      ],
+      "bbox_center": [
+        1670.5,
+        246.0
+      ],
+      "bbox_size": {
+        "width": 115.0,
+        "height": 144.0
+      },
+      "visible_keypoints_count": 16,
+      "needs_vlm": false
+    },
+    {
+      "id": 5,
+      "frame_index": 6170,
+      "timestamp_sec": 205.87,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-droite",
+      "yolo_confidence": 0.4061006009578705,
+      "bbox_xyxy": [
+        1779,
+        158,
+        1906,
+        312
+      ],
+      "bbox_center": [
+        1842.5,
+        235.0
+      ],
+      "bbox_size": {
+        "width": 127.0,
+        "height": 154.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 6120,
+      "timestamp_sec": 204.2,
+      "class": "person",
+      "posture": "INCERTAIN",
+      "uncertainty_score": 0.6,
+      "risk_level": "A_VERIFIER",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.3939666450023651,
+      "bbox_xyxy": [
+        1180,
+        928,
+        1341,
+        1080
+      ],
+      "bbox_center": [
+        1260.5,
+        1004.0
+      ],
+      "bbox_size": {
+        "width": 161.0,
+        "height": 152.0
+      },
+      "visible_keypoints_count": 14,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 6455,
+      "timestamp_sec": 215.38,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-centre",
+      "yolo_confidence": 0.8340336680412292,
+      "bbox_xyxy": [
+        581,
+        509,
+        1228,
+        912
+      ],
+      "bbox_center": [
+        904.5,
+        710.5
+      ],
+      "bbox_size": {
+        "width": 647.0,
+        "height": 403.0
+      },
+      "visible_keypoints_count": 14,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 6440,
+      "timestamp_sec": 214.88,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "milieu-centre",
+      "yolo_confidence": 0.8107635974884033,
+      "bbox_xyxy": [
+        690,
+        483,
+        1190,
+        791
+      ],
+      "bbox_center": [
+        940.0,
+        637.0
+      ],
+      "bbox_size": {
+        "width": 500.0,
+        "height": 308.0
+      },
+      "visible_keypoints_count": 12,
+      "needs_vlm": true
+    },
+    {
+      "id": 0,
+      "frame_index": 6575,
+      "timestamp_sec": 219.39,
+      "class": "person",
+      "posture": "ALLONGE",
+      "uncertainty_score": 0.05,
+      "risk_level": "ELEVE",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.7784020304679871,
+      "bbox_xyxy": [
+        518,
+        669,
+        1338,
+        1071
+      ],
+      "bbox_center": [
+        928.0,
+        870.0
+      ],
+      "bbox_size": {
+        "width": 820.0,
+        "height": 402.0
+      },
+      "visible_keypoints_count": 9,
+      "needs_vlm": true
+    }
+  ],
+  "summary": {
+    "persons_detected": 57,
+    "standing_count": 30,
+    "lying_count": 22,
+    "uncertain_count": 5,
+    "vlm_candidate_count": 27,
+    "events_count": 15
+  }
+}
