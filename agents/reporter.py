@@ -26,8 +26,11 @@ def reporter_node(state: Dict[str, Any]) -> Dict[str, Any]:
     for d in detections:
         if d.get("label") == "error":
             continue
+        posture = d.get("posture", "non précisée")
+
         yolo_lines.append(
-            f"- {d['image']}: {d['label']} (conf: {d['confidence']}, bbox: {d['bounding_box']})"
+                f"- {d['image']}: {d['label']}, posture={posture} "
+                f"(conf: {d['confidence']}, bbox: {d['bounding_box']})"
         )
     yolo_summary = "\n".join(yolo_lines) if yolo_lines else "Aucune détection YOLO."
 
