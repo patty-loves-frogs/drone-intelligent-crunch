@@ -81,3 +81,36 @@ python -m streamlit run app.py
 - Aucune API payante (OpenAI, etc.).
 - Tout fonctionne localement via Ollama.
 - Pas de nœud planner dans le graphe.
+
+
+## Llama.CPP
+Pour pouvoir envoyer des requêtes aux modèles, il faut télécharger **Llama.cpp** : https://github.com/ggml-org/llama.cpp (https://github.com/ggml-org/llama.cpp/releases)
+Télécharger la version qui correspond au matériel (CUDA pour GPU NVIDIA).
+
+Dans le cas présent, les modèles chargés par le serveur se trouveront dans ce dossier : 
+"C:\mes-modeles\MODELE_CHARGE\"
+
+Lancer un serveur par modèle à l'aide de cette commande : 
+"C:\[...]\mon-serveur-llama\llama-server.exe" ^ 
+--models-dir "C:\[...]\drone-intelligent-crunch\weights\" ^ 
+--port 8080 ^ 
+--parallel 1 ^ 
+--reasoning-budget 0 ^ 
+--reasoning off ^ 
+--n-gpu-layers 256 ^ 
+--cache-prompt ^ 
+--image-max-tokens 1024 ^
+--ctx-size 65536
+-fa on ^
+--spec-type draft-mtp ^
+--spec-draft-n-max 6 ^
+--no-ui
+
+Reasoning budget est désactivé car l'objectif du VLM ici est d'être rapide et performant.
+Parallel est désactivé pour n'avoir qu'un seul slot car utilisateur unique.
+Image max tokens est mis à 1024 car modèle Qwen3.5-4B-Q4_K_M utilisé.
+Adapter le contexte selon les besoins.
+
+## Modèle (VLM)
+Télécharger les poids VLM du modèle qui vous convient et les déposer dans un nouveau dossier dans "/weights/VLM" (GGUF & mmproj)
+Pour Qwen3.5 2B MTP GGUF : https://huggingface.co/unsloth/Qwen3.5-2B-MTP-GGUF/tree/main

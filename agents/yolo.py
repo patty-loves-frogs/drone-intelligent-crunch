@@ -12,7 +12,7 @@ from typing import Dict, Any
 # MODELE
 # ============================================
 
-model = YOLO("yolov8n-pose.pt")
+model = YOLO("weights/YOLO_V8/yolov8n-pose.pt")
 
 # ============================================
 # PARAMETRES
