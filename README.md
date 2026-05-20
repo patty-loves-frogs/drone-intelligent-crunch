@@ -92,7 +92,7 @@ Dans le cas présent, les modèles chargés par le serveur se trouveront dans ce
 
 Lancer un serveur par modèle à l'aide de cette commande : 
 "C:\[...]\mon-serveur-llama\llama-server.exe" ^ 
---models-dir "C:\[...]\drone-intelligent-crunch\weights\VLM" ^ 
+--models-dir "C:\[...]\drone-intelligent-crunch\weights\" ^ 
 --port 8080 ^ 
 --parallel 1 ^ 
 --reasoning-budget 0 ^ 
@@ -102,8 +102,9 @@ Lancer un serveur par modèle à l'aide de cette commande :
 --image-max-tokens 1024 ^
 --ctx-size 65536
 -fa on ^
---spec-type draft-mtp
---spec-draft-n-max 6
+--spec-type draft-mtp ^
+--spec-draft-n-max 6 ^
+--no-ui
 
 Reasoning budget est désactivé car l'objectif du VLM ici est d'être rapide et performant.
 Parallel est désactivé pour n'avoir qu'un seul slot car utilisateur unique.
