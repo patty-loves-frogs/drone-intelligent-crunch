@@ -8,11 +8,25 @@ def VLM_Call(image_path, text_prompt):
         
         client = OpenAI(base_url="http://127.0.0.1:8081/v1", api_key="sk-no-key-required")
         response = client.chat.completions.create(
+            temperature=0.0,
+            reasoning_effort=0,
             model="uwaaa",
             messages=[
                 {
                     "role": "system",
-                    "content" : "You are John Milton. You speak in Old English. Use emojis."
+                    "content" : """Output ONLY valid JSON.
+                                    JSON Schema:
+                                    "{
+                                    "desc": "1 sentence image summary",
+                                    "person_count": 0,
+                                    "locs": ["Person 1 location", "Person 2 location"],
+                                    "non_std": "yes/no"
+                                    }"
+
+                                    Constraints:
+                                    person_count: Total count (exclude shadows/reflections).
+                                    locs: Be extremely concise (e.g., "Back-left", "Center-fore").
+                                    non_std: "no" only if all are standing and healthy. "yes" if any are crouching, lying, under debris, or injured."""
                 },
                 {
                     "role": "user",
@@ -27,7 +41,7 @@ def VLM_Call(image_path, text_prompt):
                     ]
                 }
             ],
-            max_tokens=512
+            max_tokens=-1
         )
         return response.choices[0].message.content
     except OpenAIError as e:
@@ -37,7 +51,7 @@ def VLM_Call(image_path, text_prompt):
         return f"Unexpected Error: {str(e)}"
 
 path = r"C:\Users\chouh\Pictures\Screenshots\Screenshot 2026-03-07 210231.png"
-prompt = "What do you see in this image? Describe in 2 sentences max, with one line per sentence."
+prompt = ""
 
 result = VLM_Call(path, prompt)
 print(result)
