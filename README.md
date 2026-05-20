@@ -51,6 +51,22 @@ Pas de nœud planner.
 pip install -r requirements.txt
 ```
 
+### Configuration Ollama
+
+1. Copiez le fichier `.env.example` en `.env` :
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Configurez l'URL de votre instance Ollama dans `.env` :
+   ```env
+   # Localhost (défaut)
+   OLLAMA_BASE_URL=http://localhost:11434
+   
+   # Instance distante
+   OLLAMA_BASE_URL=http://192.168.1.100:11434
+   ```
+
 > **Note** : la première exécution téléchargera automatiquement `yolov8n.pt` (YOLOv8 nano) via Ultralytics.
 
 ## Lancer l'application

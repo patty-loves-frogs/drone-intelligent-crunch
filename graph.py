@@ -2,7 +2,7 @@ from typing import TypedDict, List, Dict, Any
 from langgraph.graph import StateGraph, END
 
 from agents.yolo import yolo_node
-from agents.vlm import vlm_node
+from agents.vlm_call import vlm_node
 from agents.reporter import reporter_node
 
 

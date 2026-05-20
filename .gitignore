@@ -1,3 +1,18 @@
 # Virtual environments
 .venv/
 venv/
+
+# Environment variables
+.env
+
+# Uploaded videos
+uploaded_videos/
+
+# Conversations history
+conversations/
+
+# Output reports
+outputs/
+
+# Temporary face crops
+temp_faces/
