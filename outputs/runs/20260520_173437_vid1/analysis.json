@@ -1,0 +1,473 @@
+{
+  "run_name": "20260520_173437_vid1",
+  "video_path": "/Users/User/drone-intelligent-crunch/video/vid1.MP4",
+  "created_at": "2026-05-20T17:35:48",
+  "output_paths": {
+    "run_dir": "outputs\\runs\\20260520_173437_vid1",
+    "raw_images_dir": "outputs\\runs\\20260520_173437_vid1\\raw",
+    "annotated_images_dir": "outputs\\runs\\20260520_173437_vid1\\annotated",
+    "json_path": "outputs\\runs\\20260520_173437_vid1\\analysis.json"
+  },
+  "parameters": {
+    "model": "yolov8n-pose.pt",
+    "analysis_stride": 5,
+    "event_window_seconds": 2,
+    "max_frames_per_event": 3,
+    "fps": 29.97002997002997
+  },
+  "frames_analyzed": 4,
+  "frames": [
+    {
+      "event_id": 0,
+      "frame_index": 420,
+      "timestamp_sec": 14.01,
+      "raw_image_path": "outputs\\runs\\20260520_173437_vid1\\raw\\event_000_frame_000420_0.jpg",
+      "annotated_image_path": "outputs\\runs\\20260520_173437_vid1\\annotated\\event_000_frame_000420_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 420,
+          "timestamp_sec": 14.01,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.2,
+          "risk_level": "FAIBLE",
+          "position_in_image": "haut-gauche",
+          "yolo_confidence": 0.415431946516037,
+          "bbox_xyxy": [
+            234,
+            0,
+            332,
+            101
+          ],
+          "bbox_center": [
+            283.0,
+            50.5
+          ],
+          "bbox_size": {
+            "width": 98.0,
+            "height": 101.0
+          },
+          "visible_keypoints_count": 12,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 1,
+        "allonge_count": 0,
+        "debout_count": 1,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 1,
+      "frame_index": 805,
+      "timestamp_sec": 26.86,
+      "raw_image_path": "outputs\\runs\\20260520_173437_vid1\\raw\\event_001_frame_000805_0.jpg",
+      "annotated_image_path": "outputs\\runs\\20260520_173437_vid1\\annotated\\event_001_frame_000805_0.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 805,
+          "timestamp_sec": 26.86,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.91768878698349,
+          "bbox_xyxy": [
+            917,
+            497,
+            1402,
+            1071
+          ],
+          "bbox_center": [
+            1159.5,
+            784.0
+          ],
+          "bbox_size": {
+            "width": 485.0,
+            "height": 574.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        },
+        {
+          "id": 1,
+          "frame_index": 805,
+          "timestamp_sec": 26.86,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.14,
+          "risk_level": "FAIBLE",
+          "position_in_image": "milieu-centre",
+          "yolo_confidence": 0.895548939704895,
+          "bbox_xyxy": [
+            474,
+            286,
+            816,
+            862
+          ],
+          "bbox_center": [
+            645.0,
+            574.0
+          ],
+          "bbox_size": {
+            "width": 342.0,
+            "height": 576.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 0,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 1,
+      "frame_index": 795,
+      "timestamp_sec": 26.53,
+      "raw_image_path": "outputs\\runs\\20260520_173437_vid1\\raw\\event_001_frame_000795_1.jpg",
+      "annotated_image_path": "outputs\\runs\\20260520_173437_vid1\\annotated\\event_001_frame_000795_1.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 795,
+          "timestamp_sec": 26.53,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.9046852588653564,
+          "bbox_xyxy": [
+            879,
+            455,
+            1411,
+            1043
+          ],
+          "bbox_center": [
+            1145.0,
+            749.0
+          ],
+          "bbox_size": {
+            "width": 532.0,
+            "height": 588.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        },
+        {
+          "id": 1,
+          "frame_index": 795,
+          "timestamp_sec": 26.53,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.14,
+          "risk_level": "FAIBLE",
+          "position_in_image": "milieu-centre",
+          "yolo_confidence": 0.8852899074554443,
+          "bbox_xyxy": [
+            544,
+            311,
+            837,
+            783
+          ],
+          "bbox_center": [
+            690.5,
+            547.0
+          ],
+          "bbox_size": {
+            "width": 293.0,
+            "height": 472.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 0,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    },
+    {
+      "event_id": 1,
+      "frame_index": 800,
+      "timestamp_sec": 26.69,
+      "raw_image_path": "outputs\\runs\\20260520_173437_vid1\\raw\\event_001_frame_000800_2.jpg",
+      "annotated_image_path": "outputs\\runs\\20260520_173437_vid1\\annotated\\event_001_frame_000800_2.jpg",
+      "detections": [
+        {
+          "id": 0,
+          "frame_index": 800,
+          "timestamp_sec": 26.69,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.1,
+          "risk_level": "FAIBLE",
+          "position_in_image": "bas-centre",
+          "yolo_confidence": 0.910167932510376,
+          "bbox_xyxy": [
+            908,
+            495,
+            1454,
+            1060
+          ],
+          "bbox_center": [
+            1181.0,
+            777.5
+          ],
+          "bbox_size": {
+            "width": 546.0,
+            "height": 565.0
+          },
+          "visible_keypoints_count": 17,
+          "needs_vlm": false
+        },
+        {
+          "id": 1,
+          "frame_index": 800,
+          "timestamp_sec": 26.69,
+          "class": "person",
+          "posture": "DEBOUT",
+          "uncertainty_score": 0.14,
+          "risk_level": "FAIBLE",
+          "position_in_image": "milieu-centre",
+          "yolo_confidence": 0.8756559491157532,
+          "bbox_xyxy": [
+            509,
+            288,
+            823,
+            813
+          ],
+          "bbox_center": [
+            666.0,
+            550.5
+          ],
+          "bbox_size": {
+            "width": 314.0,
+            "height": 525.0
+          },
+          "visible_keypoints_count": 15,
+          "needs_vlm": false
+        }
+      ],
+      "summary": {
+        "persons_detected": 2,
+        "allonge_count": 0,
+        "debout_count": 2,
+        "incertain_count": 0,
+        "needs_vlm": false
+      }
+    }
+  ],
+  "detections": [
+    {
+      "id": 0,
+      "frame_index": 420,
+      "timestamp_sec": 14.01,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.2,
+      "risk_level": "FAIBLE",
+      "position_in_image": "haut-gauche",
+      "yolo_confidence": 0.415431946516037,
+      "bbox_xyxy": [
+        234,
+        0,
+        332,
+        101
+      ],
+      "bbox_center": [
+        283.0,
+        50.5
+      ],
+      "bbox_size": {
+        "width": 98.0,
+        "height": 101.0
+      },
+      "visible_keypoints_count": 12,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 805,
+      "timestamp_sec": 26.86,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.91768878698349,
+      "bbox_xyxy": [
+        917,
+        497,
+        1402,
+        1071
+      ],
+      "bbox_center": [
+        1159.5,
+        784.0
+      ],
+      "bbox_size": {
+        "width": 485.0,
+        "height": 574.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 1,
+      "frame_index": 805,
+      "timestamp_sec": 26.86,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.14,
+      "risk_level": "FAIBLE",
+      "position_in_image": "milieu-centre",
+      "yolo_confidence": 0.895548939704895,
+      "bbox_xyxy": [
+        474,
+        286,
+        816,
+        862
+      ],
+      "bbox_center": [
+        645.0,
+        574.0
+      ],
+      "bbox_size": {
+        "width": 342.0,
+        "height": 576.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 795,
+      "timestamp_sec": 26.53,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.9046852588653564,
+      "bbox_xyxy": [
+        879,
+        455,
+        1411,
+        1043
+      ],
+      "bbox_center": [
+        1145.0,
+        749.0
+      ],
+      "bbox_size": {
+        "width": 532.0,
+        "height": 588.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 1,
+      "frame_index": 795,
+      "timestamp_sec": 26.53,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.14,
+      "risk_level": "FAIBLE",
+      "position_in_image": "milieu-centre",
+      "yolo_confidence": 0.8852899074554443,
+      "bbox_xyxy": [
+        544,
+        311,
+        837,
+        783
+      ],
+      "bbox_center": [
+        690.5,
+        547.0
+      ],
+      "bbox_size": {
+        "width": 293.0,
+        "height": 472.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": false
+    },
+    {
+      "id": 0,
+      "frame_index": 800,
+      "timestamp_sec": 26.69,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.1,
+      "risk_level": "FAIBLE",
+      "position_in_image": "bas-centre",
+      "yolo_confidence": 0.910167932510376,
+      "bbox_xyxy": [
+        908,
+        495,
+        1454,
+        1060
+      ],
+      "bbox_center": [
+        1181.0,
+        777.5
+      ],
+      "bbox_size": {
+        "width": 546.0,
+        "height": 565.0
+      },
+      "visible_keypoints_count": 17,
+      "needs_vlm": false
+    },
+    {
+      "id": 1,
+      "frame_index": 800,
+      "timestamp_sec": 26.69,
+      "class": "person",
+      "posture": "DEBOUT",
+      "uncertainty_score": 0.14,
+      "risk_level": "FAIBLE",
+      "position_in_image": "milieu-centre",
+      "yolo_confidence": 0.8756559491157532,
+      "bbox_xyxy": [
+        509,
+        288,
+        823,
+        813
+      ],
+      "bbox_center": [
+        666.0,
+        550.5
+      ],
+      "bbox_size": {
+        "width": 314.0,
+        "height": 525.0
+      },
+      "visible_keypoints_count": 15,
+      "needs_vlm": false
+    }
+  ],
+  "summary": {
+    "persons_detected": 7,
+    "standing_count": 7,
+    "lying_count": 0,
+    "uncertain_count": 0,
+    "vlm_candidate_count": 0,
+    "events_count": 2
+  }
+}
