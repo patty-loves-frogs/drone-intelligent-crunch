@@ -20,7 +20,7 @@ __pycache__/
 *.pyd
 
 # vidéos
-
+video/
 
 # models
 __pycache__/
