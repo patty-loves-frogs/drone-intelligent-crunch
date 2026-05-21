@@ -1,4 +1,4 @@
 # Virtual environments
 .venv/
 venv/
-crunch_venv/
+outputs
