@@ -77,7 +77,7 @@ def is_valid_person(box, kpts, frame_shape):
     area = w * h
     frame_area = frame_w * frame_h
 
-    if area < 0.0008 * frame_area:
+    if area < 0.0004 * frame_area:  # Tolérance pour les personnes vues de plus loin par un drone
         return False
 
     ratio = w / h
@@ -85,9 +85,9 @@ def is_valid_person(box, kpts, frame_shape):
     if ratio < 0.15 or ratio > 3.5:
         return False
 
-    visible_points = sum(1 for k in kpts if k[2] > 0.35)
+    visible_points = sum(1 for k in kpts if k[2] > 0.25)  # Seuil de confiance baissé pour le drone
 
-    if visible_points < 5:
+    if visible_points < 2:  # Baisse radicale: si on a moins de 2 points "articulaires" sûrs
         return False
 
     return True
@@ -174,8 +174,8 @@ def draw_big_label(img, label, uncertainty, x1, y1):
 def process_frame(frame, frame_index=0, timestamp_sec=0.0):
     results = model(
         frame,
-        conf=0.35,
-        iou=0.50,
+        conf=0.25,  # Baisse de 0.35 à 0.25 pour capter davantage de détections "lointaines"
+        iou=0.45,
         imgsz=960,
         verbose=False
     )

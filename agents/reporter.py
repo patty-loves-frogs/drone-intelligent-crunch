@@ -1,14 +1,15 @@
 from pathlib import Path
 
-reporter_code = r'''import json
+reporter_code = r'''import os
+import json
 from typing import Dict, Any, List, Optional
 
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 
 
-REPORTER_MODEL = "qwen2.5:3b"
-
+REPORTER_MODEL = os.getenv("REPORTER_MODEL", "qwen2.5:3b")
+REPORTER_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
 
 # ============================================================
 # OUTILS
@@ -350,7 +351,7 @@ def reporter_node(state: Dict[str, Any]) -> Dict[str, Any]:
     )
 
     try:
-        llm = ChatOllama(model=REPORTER_MODEL, temperature=0.2)
+        llm = ChatOllama(model=REPORTER_MODEL, base_url=REPORTER_BASE_URL, temperature=0.2)
         chain = prompt_template | llm
 
         response = chain.invoke(

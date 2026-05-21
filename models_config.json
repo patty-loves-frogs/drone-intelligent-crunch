@@ -1,0 +1,4 @@
+{
+    "vlm_model": "qwen3.5:2b",
+    "reporter_model": "ministral-3:3b"
+}
