@@ -1,4 +1,29 @@
 # Virtual environments
 .venv/
 venv/
-outputs
+# environnement virtuel
+crunch_venv/
+
+# outputs YOLO
+outputs/
+
+# rapports générés
+reports/
+
+# variables d'environnement
+
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# vidéos
+
+
+# models
+__pycache__/
+*.pyc
+outputs/
+reports/

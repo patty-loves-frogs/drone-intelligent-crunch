@@ -354,8 +354,8 @@ def run_video(path):
             saved_frames.append(frame_record)
             all_detections.extend(detections)
 
-            print(f"[EVENT {event_id}] raw saved: {raw_path}")
-            print(f"[EVENT {event_id}] annotated saved: {annotated_path}")
+            #print(f"[EVENT {event_id}] raw saved: {raw_path}")
+            #print(f"[EVENT {event_id}] annotated saved: {annotated_path}")
 
     while True:
         ret, frame = cap.read()
@@ -444,8 +444,8 @@ def run_video(path):
         json.dump(yolo_json, f, indent=2, ensure_ascii=False)
 
     print(f"Analyse terminee.")
-    print(f"Run dir: {run_info['run_dir']}")
-    print(f"JSON global: {run_info['json_path']}")
+    #print(f"Run dir: {run_info['run_dir']}")
+    #print(f"JSON global: {run_info['json_path']}")
 
     return yolo_json
 
